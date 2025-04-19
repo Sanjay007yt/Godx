@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="10XFOLLOWERS - Boost your social media presence with our premium services." />
+  <meta name="keywords" content="Instagram Followers, Social Media Growth, 10XFOLLOWERS" />
+  <meta name="author" content="10XFOLLOWERS Team" />
+  <title>10XFOLLOWERS | Social Media Growth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff2ca0;
+      --secondary: #7f00ff;
+      --bg-dark: #000;
+      --text-light: #fff;
+      --text-muted: #ccc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #2a0041 0%, var(--bg-dark) 100%);
+      color: var(--text-light);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+     font-family: 'Poppins', sans-serif;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 2rem;
+     border-radius: 30px;
+     background: rgba(1, 1, 1, 0.25);
+     color: white;
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     width: auto;
+     max-width: 100%;
+    }
+    .hero {
+      padding: 60px 20px 30px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+    .btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 15px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff2ca0, #7f00ff);
+      color: white;
+      box-shadow: 0 0 15px #7f00ff99;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #7f00ffdd;
+    }
+
+    .btn-secondary {
+      background: #1c1c1c;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+    .no-underline {
+     text-decoration: none;
+    }
+
+    .stats {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .box {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 300px;
+      box-shadow: 0 0 10px #00000055;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .box:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .box:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .stars {
+      color: #27f39b;
+      font-size: 1.5rem;
+    }
+
+    .icons {
+      font-size: 1.2rem;
+      margin-right: 6px;
+    }
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 25px;
+      width: 35px;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .menu-line {
+      width: 100%;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-container.active .menu-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-container.active .menu-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-container.active .menu-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 10px;
+      padding: 15px 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      .menu-container {
+        display: none;
+      }
+      .nav-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        padding: 0;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: all !important;
+      }
+    }
+    .services-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding: 0 20px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #111;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00000055;
+      animation: slideUp 0.9s ease both;
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #ff2ca0;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .pricing-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding: 0 20px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .price-card {
+      background: #111;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00000055;
+      animation: rise 1s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #7f00ff99;
+    }
+
+    .price-card h3 {
+      margin-top: 0;
+      font-size: 1.6rem;
+      color: #ff2ca0;
+    }
+
+    .price-card p {
+      font-size: 1rem;
+      color: #ccc;
+      margin: 5px 0;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #27f39b;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #ff2ca0, #7f00ff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #7f00ff, #ff2ca0);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+    .contact {
+      padding: 140px 20px 60px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .contact strong {
+      color: var(--primary);
+    }
+
+    .footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: #111;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="floating-header">
+  <div class="navbar">
+    <div class="logo-text">10XFOLLOWERS</div>
+    <div class="menu-container" id="menuToggle" onclick="toggleMenu()">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+  <section class="hero">
+    <h1>Choose Your Plan</h1>
+    <p>Flexible pricing options to fit your Instagram growth strategy.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Followers Plan - Basic</h3>
+        <div class="price">₹19</div>
+        <p>+100 Followers</p>
+        <p>> Fast Delivery (1–2 Hours)</p>
+        <p>> High-Quality Followers</p>
+        <p>> Basic Support</p>
+        <p>> No Password Required</p>
+        <p>> 7-Day Refill Guarantee</p>
+        <a class="btn" href="/ofollowers/follow1.html" target="_blank">Buy Now</a>
+      </div>
+
+  <div class="price-card">
+    <h3>Followers Plan - Standard</h3>
+    <div class="price">₹74</div>
+    <p>+500 Followers</p>
+    <p>> Instant Delivery</p>
+    <p>> High-Quality Followers</p>
+    <p>> Priority Support</p>
+    <p>> No Password Required</p>
+    <p>> 15-Day Refill Guarantee</p>
+    <p>> Order Tracking</p>
+    <a class="btn" href="/ofollowers/follow2.html" target="_blank">Buy Now</a>
+  </div>
+
+  <div class="price-card">
+    <h3>Followers Plan - Premium</h3>
+    <div class="price">₹139</div>
+    <p>+1,000 Followers</p>
+    <p>> Superfast Delivery</p>
+    <p>> Premium Quality (High Retention)</p>
+    <p>> 24/7 Support</p>
+    <p>> No Password Required</p>
+    <p>> 30-Day Refill Guarantee</p>
+    <a class="btn" href="/ofollowers/follow3.html" target="_blank">Buy Now</a>
+  </div>
+</div>
+  </section>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+    document.getElementById('menuToggle').classList.toggle('active');
+  }
+
+  const header = document.querySelector(".floating-header");
+  window.addEventListener("scroll", () => {
+    header.style.backgroundColor = window.scrollY > 10 ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.3)";
+    header.style.backdropFilter = window.scrollY > 10 ? "blur(25px)" : "blur(20px)";
+  });
+
+  const links = document.querySelectorAll('.nav-links a');
+  const current = window.location.pathname.split('/').pop();
+  links.forEach(link => {
+    if (link.getAttribute('href') === current) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+</body>
+</html>
